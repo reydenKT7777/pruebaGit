@@ -23,8 +23,8 @@
   <div class="col-md-4">
     <ul class="list-unstyled">
       <li><a href="javascript:mostrarPG(1)" class="btn btn-info">Lista de Usuarios</a></li>
-      <li><a href="#" class="btn btn-success">Lista de accesos</a></li>
-      <li><a href="#" class="btn btn-primary">Lista de archivos</a></li>
+      <li><a href="javascript:mostrarPG(2)" class="btn btn-success">Lista de accesos</a></li>
+      <li><a href="javascript:mostrarPG(3)" class="btn btn-primary">Lista de archivos</a></li>
     </ul>
   </div>
   <div class="col-md-8" id="contenedor">
