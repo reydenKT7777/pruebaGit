@@ -22,12 +22,12 @@
 <div class="container">
   <div class="col-md-4">
     <ul class="list-unstyled">
-      <li><a href="#" class="btn btn-info">Lista de Usuarios</a></li>
+      <li><a href="javascript:mostrarPG(1)" class="btn btn-info">Lista de Usuarios</a></li>
       <li><a href="#" class="btn btn-success">Lista de accesos</a></li>
       <li><a href="#" class="btn btn-primary">Lista de archivos</a></li>
     </ul>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-8" id="contenedor">
     <h1>Contenido</h1>
   </div>
 </div>
@@ -35,5 +35,39 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+      var mostrarPG = function (id) {
+        var l1 = "lista1.php";
+        var l2 = "lista2.php";
+        var l3 = "lista3.php";
+        if (id == 1) {
+          lista = l1;
+        }
+        if (id == 2) {
+          lista = l2;
+        }
+        if (id == 3) {
+          lista = l3;
+        }
+        $.ajax({
+          url: lista,
+          dataType: 'html',
+          success:function (data) {
+            $('#contenedor').empty();
+            $('#contenedor').html(data);
+          }
+        })
+        .done(function() {
+          console.log("success");
+        })
+        .fail(function() {
+          console.log("error");
+        })
+        .always(function() {
+          console.log("complete");
+        });
+
+      }
+    </script>
   </body>
 </html>
